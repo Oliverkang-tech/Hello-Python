@@ -1,0 +1,31 @@
+
+
+
+#Print
+
+print('Pratice')
+
+
+
+
+#Version, Version_info
+
+import sys
+print("Python Version")
+print(sys.version)
+
+print("Version info.")
+print(sys.version_info)
+
+
+
+
+
+#Datetime
+
+import datetime
+now = datetime.datetime.now()
+print("Current date and time : ")
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+
+
