@@ -1,0 +1,81 @@
+#문자열
+
+sentence = '나는 강기현입니다.'
+print(sentence)
+sentence2 = "파이썬을 배우고 있습니다."
+print(sentence2)
+sentence3 = """
+나는 강기현이고, 
+파이썬을 배우고 있습니다.
+"""
+print(sentence3)
+
+
+
+
+#슬라이싱 - 정보 가져오기(연, 성별 등)
+
+jumin = "930930-1234567"
+
+print("성별 : " +jumin[7])
+print("연 : " +jumin[0:2]) #0부터 2직전까지 (0,1)
+print("월 : " +jumin[2:4])
+print("일 : " +jumin[4:6])
+
+print("생년월일 : " + jumin[0:6]) #[:6]으로 해도 상관없음. 처음부터 6까지라는 의미
+print("뒤 7자리 : " + jumin[7:14]) # [7:]해도 상관없음. 7부터 끝까지
+print("뒤 7자리 (뒤에서부터)" + jumin[-7:]) #맨 뒤인 -7부터 끝까지 
+
+#문자열처리함수
+
+python = "Python is Amazing"
+print(python.lower()) #모든 문자 소문자로 출력
+print(python.upper()) #모든 문자 대문자로 출력
+print(python[0].isupper()) #python의 0번째 문자가 대문자인지 알려줌. 만약 대문자면 True
+print(len(python)) #파이썬 문자의 길이를 반환(만약 띄어쓰기 포함 17글자면 17이 출력)
+print(python.replace("Python","Java")) #Python 문장에서 python를 찾은다음 Java로 바꿔줄것임
+
+index = python.index("n") #python이란 변수에서 n이라는 글자가 몇번째 위치한지  012345 이므로 5 출력
+print(index)
+
+index = python.index("n", index + 1) #5라는 위치에서 +1을 한 6의 위치에서 n이 나오는 위치 즉, 2번째 n이 나오는 위치
+print(index)
+
+print(python.find("n")) #find에서는 원하는 값이 없을 때 -1 반환
+#print(python.find("Java")) 일경우 find의 경우 없어서 -1 
+print(python.index("Java")) #ㅑindex의 경우는 find와 다르게 -1반환이 아니라 오류를 내버림.
+
+print(pyhton.count("n")) #python에서 n이 몇번 등장하는지
+
+
+
+
+#문자열 포맷
+
+#print("a"+"b")
+#print("a","b")
+
+#방법 1
+print("나는 %d살입니다." %20) #정수
+print("나는 %s을 좋아해요." %"파이썬") #문자열
+print("Apple은 %c로 시작해요." % "A") #문자   각각 다르게 표시하지만 
+
+#%s로만 쓰면 상관없이 가능
+
+print("나는 %s살입니다." % 20)
+print("나는 %s색과 %s색을 좋아해요." %("파란","빨간"))
+
+#방법2
+print("나는 {}살입니다.".format(20)) #포맷 괄호속에 있는 숫자를 중괄호 {}에 넣게됨.
+print("나는 {}색과 {}색을 좋아해요.".format("파란","빨간")) #2개 이상 값을 적고 싶을 때
+print("나는 {0}색과 {1}색을 좋아해요.".format("파란", "빨간")) #포맷 뒤의 값들을 파란:0번째, 빨간:1번째라고 생각해서 출력됨
+print("나는 {1}색과 {0}색을 좋아해요.".format("파란", "빨간")) #포맷 파란 : 1번째, 빨간: 0번째 
+
+#방법3
+print("나는 {age}살이며, {color}색을 좋아해요.".format(age = 20, color="빨간"))
+print("나는 {age}살이며, {color}색을 좋아해요.".format(color="빨간", age = 20 )) #바뀌어도 같은 값 출력
+
+#방법4
+age = 20 
+color = "빨간"
+print(f"나는 {age}살이며, {color}색을 좋아해요.")
