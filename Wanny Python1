@@ -1,0 +1,15 @@
+#Wanny Python1
+
+def sayHello(name, age):
+  if age <10:
+    print("안녕,"+ name)
+  elif age<=20 and age>=10:
+    print("안녕하세요, " + name)  
+  else:
+    print("안녕하십니까, " + name)
+
+
+sayHello("기현", 28)
+sayHello("주희", 10)
+sayHello("하은", 3)    
+
