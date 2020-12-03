@@ -1,0 +1,14 @@
+#패키지
+from animal import dog #animal 패키지에서 dog이라는 모듈을 가져와줘
+from animal import cat #animal 패키지에서 cat이라는 모듈을 가져와줘
+
+from animal import * #animal 패키지가 갖고 있는 모듈을 다 불러와
+
+d = dog.Dog() #instance
+c=cat.Cat()
+
+
+d.hi()
+c.hi()
+
+#즉, 패키지는 내가 쓴 코드를 다른사람들에게 공유할 때 등 쓰임. 
