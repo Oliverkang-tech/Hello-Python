@@ -1,0 +1,246 @@
+#탈출문자
+
+#탈출문자 \n
+
+print("백문이불여일견 \n백견이불여일타")
+
+# 저는 "강기현"입니다.
+#print("저는 '강기현'입니다. ")
+#print('저는 "강기현"입니다.')
+#print("저는 \"강기현\"입니다.")
+#print("저는 \'강기현'\입니다.")
+
+#\\: 문장 내에서 \ 로 바뀌게 됨.
+#print("\\Users\\mcbookpro\\Desktop\\Python 연습\\practice.py")
+
+
+#\r : 커서를 맨 앞으로 이동
+#print("Red Apple\rPine")
+
+#\b : 백스페이스 (한글자 삭제)
+#print("Redd\bApple")
+
+#\t : 탭 
+print("Red\tApple")
+
+
+#퀴즈
+
+url = "http://google.com"
+my_str = url.replace("http://", "") #규칙1
+#print(my_str)
+my_str=my_str[:my_str.index(".")] #규칙2
+#print(my_str)
+
+password = my_str[:3] + str(len(my_str)) + str(my_str.count("e"))
+print("{0}의 비밀번호는 {1} 입니다." .format(url, password)) 
+
+
+
+
+
+#리스트
+
+#리스트 []
+
+# #지하철 칸별로 10 20 30
+
+# subway = [10,20,30]
+
+# subway = ["A", "B", "C"]
+
+# print(subway)
+
+# print(subway.index("B"))
+
+# #다음정거장에서 D가 탔다.
+
+# subway.append("D") #append를 하면 맨 뒤에 붙음
+# print(subway)
+
+# #만약 append 처럼 맨뒤가 아니라 그 사이에 넣고 싶다면? E를 두번째에 넣는다.
+# subway.insert(1, "E")
+# print(subway)
+
+#지하철에 있는 사람을 한 명씩 뒤로 빼고 싶을 때?
+#print(subway.pop())
+#print(subway)
+
+# print(subway.pop())
+# print(subway)
+
+# print(subway.pop())
+# print(subway)
+
+# print(subway.pop())
+# print(subway)
+
+#같은 값이 몇개가 있는지 확인
+# subway.append("A")
+# print(subway)
+# print(subway.count("A"))
+
+# #정렬도 가능
+# num_list = [5,2,4,3,1]
+# num_list.sort()
+# print(num_list)
+
+# #순서 뒤집기
+# num_list.reverse()
+# print(num_list)
+
+# #모두 지우기
+# num_list.clear()
+#print(num_list)
+num_list = [5,2,4,3,1]
+mix_list = ["A",20,True]
+#print(mix_list)
+
+#리스트 합치기
+num_list.extend(mix_list)
+
+print(num_list)
+
+#사전
+
+# cabinet = {3: "A" , 100:"B"}
+# print(cabinet[100])
+# print(cabinet[3])
+
+# print(cabinet.get(3))
+# print(cabinet[5])  # 만약 cabinet 에 없는 키를 적으면 여기까지 하고 프로그램이 끝남.
+# print("Hello")
+
+#중간에 추가해서 사용하려고 할 때
+
+# print(cabinet.get(5))
+# print(cabinet.get(5,"사용가능"))
+# print("hi")
+
+
+#print(3 in cabinet)  #3이라는 변수가 cabinet에 있으면 True 없으면 False
+
+cabinet = {"A-3": "A" , "B-100":"B"}
+print(cabinet["A-3"])
+print(cabinet["B-100"])
+
+#새 손님
+print(cabinet)
+cabinet["A-30"] = "C"
+cabinet["C-20"] = "D"
+print(cabinet)
+
+#떠난 손님
+del cabinet["A-30"]
+print(cabinet)
+
+#key 들만 출력
+print(cabinet.keys())
+
+#value 만 출력
+print(cabinet.values())
+
+#key, value 쌍으로 출력
+print(cabinet.items())
+
+#목욕탕 폐점
+cabinet.clear()
+print(cabinet)
+
+
+
+
+#튜플배우기
+
+menu = ("돈까스", "치즈까스")
+print(menu[0])
+print(menu[1])
+
+#menu.add("생선까스")
+
+
+name = "김종국"
+age = 20
+hobby = "코딩"
+print(name, age, hobby)  #원래는 이렇게 여러 줄로 선언을 하지만 튜플을 이용하면 다음 코드처럼 간단하게 선언 가능.
+
+#튜플
+(name, age, hobby) = ("김종국", 20, "코딩")
+print(name, age, hobby)
+
+
+
+#집합(set)
+#중복 안됨, 순서 없음
+
+my_set = {1,2,3,3,3}
+print(my_set)
+
+java = {"유재석", "김태호","양세형"}
+python = set(["유재석", "박명수"])
+
+#교집합 (java와 python을 모두 할 수 있는 개발자)
+print(java&python)
+print(java.intersection(python))
+
+#합집합 (java도 할 수 있거나 python도 할 수 있는 개발자) 순서는 다르게 나올 수 있음.
+print(java | python)
+print(java.union(python))
+
+#차집합 (java는 할 수 있지만 python은 할줄 모르는 개발자)
+print(java - python)
+print(java.difference(python))
+
+#python 할줄 아는 사람이 늘어남
+python.add("김태호")
+print(python)
+
+#java를 잊었어요.
+java.remove("김태호")
+print(java)
+
+#자료구조의 변경
+menu = {"커피", "우유", "주스"}
+print(menu, type(menu))
+
+menu = list(menu)
+print(menu, type(menu))
+
+menu = tuple(menu)
+print(menu, type(menu))
+
+menu = set(menu)
+print(menu, type(menu))
+
+
+
+연습문제 - 4명의 당첨자(1명 치킨, 3명 커피)를 랜덤하게 뽑는 
+
+
+# from random import *
+# lst = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 ]
+# # print(lst)
+# # shuffle(lst)
+# # print(lst)
+
+# print(sample(lst, 1))
+# print( sample(lst, 3)) #중복 빼는거
+
+
+from random import *
+
+users = range(1,21) #1부터 20까지 숫자를 생성
+#print(type(users)) #users를 list로 변환 range타입이라서 변환시킨거
+users = list(users)
+#print(type(users))
+
+print(users)
+shuffle(users)
+print(users)
+
+winners = sample(users,4) #4명 중에서 한명은 치킨, 3명은 커피
+
+print("--당첨자 발표 --")
+print("치킨 당첨자 : {0}".format(winners[0]))
+print("커피 당첨자 : {0}".format(winners[1:]))
+print("--축하합니다.--")
